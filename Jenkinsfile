@@ -13,8 +13,9 @@ pipeline {
      
     stage('Build') {
       steps {
+        sh 'pwd'
         sh 'npm install'
-         sh 'nohup node app.js &'
+        sh 'nohup node app.js &'
       }
     }  
     
@@ -23,6 +24,6 @@ pipeline {
     //   steps {
     //     sh 'npm test'
     //   }
-    // }
+    // }cp -f test1 /home
   }
 }
