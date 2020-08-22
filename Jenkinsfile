@@ -39,7 +39,26 @@ pipeline {
             }
         }
     }    
-            
+     stage('Pull In Development') {
+        steps {
+            script {
+                sshPublisher(publishers: [
+                    sshPublisherDesc(
+                        configName: "${env.ec2-user}",
+                        transfers: [
+                            sshTransfer(
+                                sourceFiles: "/var/lib/jenkins/workspace/Nodejs-pipelines/app.js",
+                                execCommand: "cd nodejs,cp -f app.js "
+                            )
+                        ],
+                        usePromotionTimestamp: false,
+                        useWorkspaceInPromotion: false,
+                        verbose: false
+                    )]
+                )
+            }
+        }
+    }       
     // stage('Test') {
     //   steps {
     //     sh 'npm test'
