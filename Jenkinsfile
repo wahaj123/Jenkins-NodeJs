@@ -16,7 +16,6 @@ pipeline {
         sh 'pwd'
         sh 'npm install'
         sh 'npm install express'
-        sh 'nohup node app.js &'
       }
     }  
     stage('SSH transfer') {
