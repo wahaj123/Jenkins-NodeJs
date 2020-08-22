@@ -38,7 +38,7 @@ pipeline {
                 )
             }
         }
-    }    
+    };    
      stage('Pull In Development') {
         steps {
             script {
@@ -58,7 +58,7 @@ pipeline {
                 )
             }
         }
-    }       
+    };       
     // stage('Test') {
     //   steps {
     //     sh 'npm test'
