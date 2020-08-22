@@ -19,7 +19,7 @@ pipeline {
       }
     }  
     stage('SSH transfer') {
-        script {
+        script [
             sshPublisher(
                 continueOnError: false, failOnError: true,
                 publishers: [
@@ -35,7 +35,7 @@ pipeline {
                     )
                 ]
             )
-        }
+        ]
     }    
             
     // stage('Test') {
