@@ -31,10 +31,12 @@ pipeline {
                                 sourceFiles: "/var/lib/jenkins/workspace/Nodejs-pipelines/app.js",
                                 execCommand: "cd nodejs,cp -f app.js "
                                 )
-                ]  )
-   ])
- }
-}    
+                            ] 
+                    )
+                ]
+            )
+        }
+    }    
             
     // stage('Test') {
     //   steps {
