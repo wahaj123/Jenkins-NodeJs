@@ -18,28 +18,28 @@ pipeline {
         sh 'npm install express'
       }
     }  
-    stage('SSH transfer') {
-        steps{
-            script {
-                sshPublisher(
-                    continueOnError: false, failOnError: true,
-                    publishers: [
-                        sshPublisherDesc(
-                            configName: "${env.ec2-user}",
-                            verbose: true,
-                            transfers: [
-                                sshTransfer(
-                                    sourceFiles: "/var/lib/jenkins/workspace/Nodejs-pipelines/app.js",
-                                    execCommand: "cd nodejs,cp -f app.js "
-                                    )
-                                ] 
-                        )
-                    ]
-                )
-            }
-        }
-    };    
-     stage('Pull In Development') {
+    // stage('SSH transfer') {
+    //     steps{
+    //         script {
+    //             sshPublisher(
+    //                 continueOnError: false, failOnError: true,
+    //                 publishers: [
+    //                     sshPublisherDesc(
+    //                         configName: "${env.ec2-user}",
+    //                         verbose: true,
+    //                         transfers: [
+    //                             sshTransfer(
+    //                                 sourceFiles: "/var/lib/jenkins/workspace/Nodejs-pipelines/app.js",
+    //                                 execCommand: "cd nodejs,cp -f app.js "
+    //                                 )
+    //                             ] 
+    //                     )
+    //                 ]
+    //             )
+    //         }
+    //     }
+    // };    
+     stage('Deployment') {
         steps {
             script {
                 sshPublisher(publishers: [
@@ -58,7 +58,7 @@ pipeline {
                 )
             }
         }
-    };       
+    }       
     // stage('Test') {
     //   steps {
     //     sh 'npm test'
