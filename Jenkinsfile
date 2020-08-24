@@ -27,7 +27,7 @@ pipeline {
                         transfers: [
                             sshTransfer(
                                 sourceFiles: "/var/lib/jenkins/workspace/Nodejs-pipelines/app.js",
-                                execCommand: "mkdir nodejs, cd nodejs"
+                                execCommand: "mkdir nodejs", "cd nodejs"
                             )
                         ],
                         usePromotionTimestamp: false,
