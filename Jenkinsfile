@@ -26,7 +26,7 @@ pipeline {
                         configName: 'ec2-user',
                         transfers: [
                             sshTransfer(
-                                sourceFiles: "/var/lib/jenkins/workspace/Nodejs-pipelines/app.js",
+                                sourceFiles: "**/*",
                                 execCommand: "mkdir nodejs; cd nodejs; cp -f app.js" 
                             )
                         ],
