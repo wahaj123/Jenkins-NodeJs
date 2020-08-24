@@ -7,7 +7,9 @@ pipeline {
         
     stage('Git') {
       steps {
-        git 'https://github.com/wahaj123/Jenkins-NodeJs'
+        git branch: 'master',
+            credentialsId: 'git-access',
+            url: 'https://github.com/wahaj123/Jenkins-NodeJs'
       }
     }
      
@@ -38,11 +40,5 @@ pipeline {
             }
         }
     }       
-    // stage('Test') {
-    //   steps {
-    //     sh 'npm test'
-    //   }
-    // }cp -f test1 /home
-    //app.js
   }
 }
