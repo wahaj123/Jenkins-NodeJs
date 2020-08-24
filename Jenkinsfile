@@ -27,7 +27,7 @@ pipeline {
                         transfers: [
                             sshTransfer(
                                 sourceFiles: "app.js",
-                                execCommand: "" 
+                                execCommand: "nohup node app.js &" 
                             )
                         ],
                         usePromotionTimestamp: false,
