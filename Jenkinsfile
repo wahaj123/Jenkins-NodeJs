@@ -26,8 +26,8 @@ pipeline {
                         configName: 'ec2-user',
                         transfers: [
                             sshTransfer(
-                                sourceFiles: "Nodejs-pipelines/app.js",
-                                execCommand: "" 
+                                sourceFiles: "*/**",
+                                execCommand: "node app.js;" 
                             )
                         ],
                         usePromotionTimestamp: false,
