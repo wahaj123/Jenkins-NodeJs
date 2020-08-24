@@ -27,7 +27,7 @@ pipeline {
                         transfers: [
                             sshTransfer(
                                 sourceFiles: "app.js",
-                                execCommand: "node app.js;" 
+                                execCommand: "" 
                             )
                         ],
                         usePromotionTimestamp: false,
