@@ -27,7 +27,7 @@ pipeline {
                         transfers: [
                             sshTransfer(
                                 sourceFiles: "app.js",
-                                execCommand: "npm install; npm install express; nohup node app.js &" 
+                                execCommand: "npm install; npm install express; export BUILD_ID=dontKillMe; nohup node app.js &" 
                             )
                         ],
                         usePromotionTimestamp: false,
