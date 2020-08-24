@@ -30,7 +30,7 @@ pipeline {
             script {
                 sshPublisher(publishers: [
                     sshPublisherDesc(
-                        configName: 'ec2-user',
+                        configName: 'ec2-slave',
                         transfers: [
                             sshTransfer(
                                 sourceFiles: "app.js",
