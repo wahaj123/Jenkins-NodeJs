@@ -23,7 +23,7 @@ pipeline {
             script {
                 sshPublisher(publishers: [
                     sshPublisherDesc(
-                        configName: "${env.ec2-user}",
+                        configName: 'ec2-user',
                         transfers: [
                             sshTransfer(
                                 sourceFiles: "/var/lib/jenkins/workspace/Nodejs-pipelines/app.js",
